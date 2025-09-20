@@ -1,0 +1,426 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-09-19T21:30:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_001",
+      "parentId": "fld_001",
+      "modified": 1726774200000,
+      "created": 1726774200000,
+      "url": "{{ _.base_url }}/api/inventory",
+      "name": "Registrar Entrada de Estoque",
+      "description": "Registra entrada de produtos no estoque com suas respectivas quantidades",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"product_id\": 1,\n  \"quantity\": 100\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1726774200000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_002",
+      "parentId": "fld_001",
+      "modified": 1726774200000,
+      "created": 1726774200000,
+      "url": "{{ _.base_url }}/api/inventory",
+      "name": "Consultar Estoque Atual",
+      "description": "Obtém a situação atual do estoque com valores totais e lucro projetado",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1726774199000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_003",
+      "parentId": "fld_002",
+      "modified": 1726774200000,
+      "created": 1726774200000,
+      "url": "{{ _.base_url }}/api/sales",
+      "name": "Registrar Nova Venda",
+      "description": "Registra uma nova venda com múltiplos itens, calculando automaticamente valores totais e margem de lucro",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"items\": [\n    {\n      \"product_id\": 1,\n      \"quantity\": 5\n    },\n    {\n      \"product_id\": 2,\n      \"quantity\": 3\n    }\n  ]\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1726774198000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_004",
+      "parentId": "fld_002",
+      "modified": 1726774200000,
+      "created": 1726774200000,
+      "url": "{{ _.base_url }}/api/sales/1",
+      "name": "Consultar Detalhes da Venda",
+      "description": "Obtém os detalhes de uma venda específica com todos os itens",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1726774197000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_005",
+      "parentId": "fld_003",
+      "modified": 1726774200000,
+      "created": 1726774200000,
+      "url": "{{ _.base_url }}/api/reports/sales",
+      "name": "Relatório de Vendas - Sem Filtros",
+      "description": "Gera relatório de vendas sem filtros aplicados",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1726774196000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_006",
+      "parentId": "fld_003",
+      "modified": 1726774200000,
+      "created": 1726774200000,
+      "url": "{{ _.base_url }}/api/reports/sales?start_date=2025-01-01&end_date=2025-12-31",
+      "name": "Relatório de Vendas - Por Período",
+      "description": "Gera relatório de vendas filtrado por período específico",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "start_date",
+          "value": "2025-01-01",
+          "description": "Data inicial (YYYY-MM-DD)"
+        },
+        {
+          "name": "end_date",
+          "value": "2025-12-31",
+          "description": "Data final (YYYY-MM-DD)"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1726774195000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_007",
+      "parentId": "fld_003",
+      "modified": 1726774200000,
+      "created": 1726774200000,
+      "url": "{{ _.base_url }}/api/reports/sales?product_id=1",
+      "name": "Relatório de Vendas - Por Produto",
+      "description": "Gera relatório de vendas filtrado por produto específico",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "product_id",
+          "value": "1",
+          "description": "ID do produto específico"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1726774194000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_008",
+      "parentId": "fld_003",
+      "modified": 1726774200000,
+      "created": 1726774200000,
+      "url": "{{ _.base_url }}/api/reports/sales?start_date=2025-01-01&end_date=2025-12-31&product_id=1",
+      "name": "Relatório de Vendas - Filtros Combinados",
+      "description": "Gera relatório de vendas com filtros por período e produto combinados",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "start_date",
+          "value": "2025-01-01",
+          "description": "Data inicial (YYYY-MM-DD)"
+        },
+        {
+          "name": "end_date",
+          "value": "2025-12-31",
+          "description": "Data final (YYYY-MM-DD)"
+        },
+        {
+          "name": "product_id",
+          "value": "1",
+          "description": "ID do produto específico"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1726774193000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_009",
+      "parentId": "fld_004",
+      "modified": 1726774200000,
+      "created": 1726774200000,
+      "url": "{{ _.base_url }}/api/inventory",
+      "name": "Teste - Entrada Estoque Inválida",
+      "description": "Testa validação com dados inválidos para entrada de estoque",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"product_id\": 999,\n  \"quantity\": -1\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1726774192000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_010",
+      "parentId": "fld_004",
+      "modified": 1726774200000,
+      "created": 1726774200000,
+      "url": "{{ _.base_url }}/api/sales",
+      "name": "Teste - Venda Inválida",
+      "description": "Testa validação com dados inválidos para criação de venda",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"items\": []\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1726774191000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_001",
+      "parentId": "wrk_001",
+      "modified": 1726774200000,
+      "created": 1726774200000,
+      "name": "Gerenciamento de Estoque",
+      "description": "Endpoints para gerenciamento de estoque - entrada e consulta",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1726774200000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_002",
+      "parentId": "wrk_001",
+      "modified": 1726774200000,
+      "created": 1726774200000,
+      "name": "Processamento de Vendas",
+      "description": "Endpoints para processamento de vendas - criação e consulta",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1726774199000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_003",
+      "parentId": "wrk_001",
+      "modified": 1726774200000,
+      "created": 1726774200000,
+      "name": "Relatórios",
+      "description": "Endpoints para geração de relatórios de vendas com filtros",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1726774198000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_004",
+      "parentId": "wrk_001",
+      "modified": 1726774200000,
+      "created": 1726774200000,
+      "name": "Testes de Validação",
+      "description": "Testes para validar comportamentos de erro e validação",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1726774197000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_001",
+      "parentId": null,
+      "modified": 1726774200000,
+      "created": 1726774200000,
+      "name": "Laravel API - Sistema de Estoque e Vendas",
+      "description": "Collection completa para testar a API REST do sistema de gerenciamento de estoque e vendas",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_001",
+      "parentId": "wrk_001",
+      "modified": 1726774200000,
+      "created": 1726774200000,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8080"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1726774200000,
+      "_type": "environment"
+    }
+  ]
+}
