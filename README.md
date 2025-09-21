@@ -544,28 +544,6 @@ docker-compose restart redis
 docker-compose restart app
 ```
 
-## 📊 Benefícios dos Princípios SOLID
-
-### Manutenibilidade
-- ✅ Código organizado em responsabilidades claras
-- ✅ Mudanças isoladas em classes específicas
-- ✅ Fácil localização de funcionalidades
-
-### Testabilidade
-- ✅ Testes unitários isolados
-- ✅ Mocks e stubs facilmente criados
-- ✅ Cobertura de testes abrangente
-
-### Extensibilidade
-- ✅ Novas funcionalidades sem modificar código existente
-- ✅ Implementações alternativas facilmente adicionadas
-- ✅ Configuração flexível por ambiente
-
-### Performance
-- ✅ Implementações otimizadas (cache, lazy loading)
-- ✅ Configuração específica por ambiente
-- ✅ Carregamento sob demanda
-
 ## 🎯 Exemplos de Uso
 
 ### Configuração Básica (Desenvolvimento)
