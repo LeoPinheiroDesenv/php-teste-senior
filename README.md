@@ -326,43 +326,6 @@ O sistema registra logs importantes:
 4. Push para a branch
 5. Abra um Pull Request
 
-## 🏗️ Princípios SOLID Implementados
-
-Este projeto segue rigorosamente os princípios SOLID para garantir uma arquitetura de alta qualidade:
-
-### 1. Single Responsibility Principle (SRP)
-Cada classe tem uma única responsabilidade:
-- **Controllers**: Apenas gerenciam requisições HTTP
-- **Services**: Apenas lógica de negócio
-- **Repositories**: Apenas acesso a dados
-- **ValidationService**: Apenas validações
-
-### 2. Open/Closed Principle (OCP)
-Classes abertas para extensão, fechadas para modificação:
-- **Interfaces abstratas** para extensão
-- **Implementações alternativas**:
-  - `CacheInventoryRepository` - Com cache
-  - `FileReportRepository` - Com salvamento em arquivo
-  - `StrictValidationRepository` - Com validações rigorosas
-
-### 3. Liskov Substitution Principle (LSP)
-Implementações totalmente substituíveis:
-- **Comportamento consistente** entre implementações
-- **Testes funcionam** com qualquer implementação
-- **Polimorfismo** real entre classes
-
-### 4. Interface Segregation Principle (ISP)
-Interfaces específicas e focadas:
-- `StockOperationsInterface` - Operações de estoque
-- `StockQueryInterface` - Consultas de estoque
-- `SaleCreationInterface` - Criação de vendas
-- `SaleQueryInterface` - Consultas de vendas
-- `SaleProcessingInterface` - Processamento de vendas
-- `ReportGenerationInterface` - Geração de relatórios
-- `InputValidationInterface` - Validação de entrada
-- `FilterValidationInterface` - Validação de filtros
-
-
 ### Estrutura de Pastas
 ```
 app/
@@ -409,29 +372,6 @@ Controller → Service → Repository → Model
   Interface  Interface  Interface
 ```
 
-## ⚙️ Configuração SOLID
-
-### Variáveis de Ambiente para SOLID
-```env
-# Configurações SOLID
-USE_CACHE_INVENTORY=false
-USE_FILE_REPORTS=false
-USE_STRICT_VALIDATION=false
-
-# Configurações de Cache
-CACHE_TTL_INVENTORY=3600
-CACHE_TTL_STOCK_CHECK=300
-
-# Configurações de Relatórios
-REPORTS_STORAGE_PATH=reports
-REPORTS_MAX_DAYS_RANGE=365
-
-# Configurações de Validação
-VALIDATION_MAX_QUANTITY=10000
-VALIDATION_MAX_ITEMS_PER_SALE=50
-VALIDATION_MAX_QUANTITY_PER_ITEM=1000
-```
-
 ### Implementações Disponíveis
 
 #### 1. Inventory (Estoque)
@@ -448,8 +388,6 @@ VALIDATION_MAX_QUANTITY_PER_ITEM=1000
 - **Padrão**: `ValidationRepository` - Validações básicas
 - **Rigorosa**: `StrictValidationRepository` - Validações adicionais
 - **Configuração**: `USE_STRICT_VALIDATION=true`
-
-## 🧪 Testes com SOLID
 
 ### Testes de Unidade
 ```php
