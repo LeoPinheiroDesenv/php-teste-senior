@@ -449,24 +449,6 @@ class InventoryControllerTest extends TestCase
 - **📊 Estatísticas**: Visualize informações do servidor Redis
 - **👀 Monitoramento**: Veja comandos sendo executados em tempo real
 
-## 🔧 Scripts de Gerenciamento
-
-### Scripts Disponíveis
-```bash
-# Redis
-./redis-manager.sh status    # Status do Redis
-./redis-manager.sh web       # Abrir interface web
-./redis-manager.sh queue     # Ver filas
-
-# Queues
-./queue-manager.sh start     # Iniciar workers
-./queue-manager.sh status    # Status dos workers
-./queue-manager.sh monitor   # Monitorar filas
-
-# Setup
-./setup.sh                   # Setup completo do projeto
-```
-
 ### Comandos Docker
 ```bash
 # Ver containers
