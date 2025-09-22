@@ -489,8 +489,3 @@ USE_FILE_REPORTS=true
 REPORTS_STORAGE_PATH=reports
 USE_STRICT_VALIDATION=true
 VALIDATION_MAX_QUANTITY=10000
-```
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT.
